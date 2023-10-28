@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gate Open and Close</title>
+<style>
+  .gate-container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .gate {
+    width: 100%;
+    height: 100%;
+    background-image: url('gateslide.jpg');
+    background-size: cover;
+    background-color: blue;
+    transition: transform 0.5s;
+  }
+
+  .gate.open {
+    transform: translateX(100%);
+  }
+</style>
+</head>
+<body>
+  <h1>Gate Open and Close</h1>
+  <div class="gate-container">
+    <div class="gate"></div>
+  </div>
+  <br>
+  <button id="open-button">Open Gate</button>
+  <button id="close-button">Close Gate</button>
+
+  <script>
+    const gate = document.querySelector(".gate");
+    const openButton = document.getElementById("open-button");
+    const closeButton = document.getElementById("close-button");
+
+    openButton.addEventListener("click", () => {
+      gate.classList.add("open");
+    });
+
+    closeButton.addEventListener("click", () => {
+      gate.classList.remove("open");
+    });
+  </script>
+</body>
+</html>
