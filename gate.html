@@ -1,0 +1,34 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gate Open and Close</title>
+<style>
+  #gate-image {
+    width: 300px;
+    transition: transform 0.5s;
+</style>
+</head>
+<body>
+  <h1>Gate Open and Close</h1>
+  <img id="gate-image" src="gateslide.jpg" alt="Closed Gate">
+  <br>
+  <button id="open-button">Open Gate</button>
+  <button id="close-button">Close Gate</button>
+
+  <script>
+    const gateImage = document.getElementById("gate-image");
+    const openButton = document.getElementById("open-button");
+    const closeButton = document.getElementById("close-button");
+
+    openButton.addEventListener("click", () => {
+      gateImage.style.transform = "translateX(200px)";
+    });
+
+    closeButton.addEventListener("click", () => {
+      gateImage.style.transform = "translateX(0)";
+    });
+  </script>
+</body>
+</html>
